@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daro Tec | Simulación Científica, LaTeX & Presentaciones Técnicas</title>
+  <meta name="description" content="Servicios especializados en simulación en Python (2D/3D), diagramación editorial en LaTeX y presentaciones de alto impacto para ingeniería y sustentaciones.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+              accent: '#38bdf8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Estilos Personalizados Separados (Incluye proporciones 3:4 y Glassmorphism) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen grid-pattern">
+
+  <!-- Glow Effect Top -->
+  <div class="fixed inset-0 pointer-events-none gradient-glow"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-sky-500/25 border border-sky-400/30">
+          DT
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg tracking-tight text-white leading-none">Daro<span class="text-sky-400">Tec</span></span>
+          <span class="text-[10px] font-mono text-slate-400 tracking-wider">ENGINEERING & DOCS</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#servicios" class="hover:text-sky-400 transition">Servicios</a>
+        <a href="#proyectos" class="hover:text-sky-400 transition">Portafolio</a>
+        <a href="#proceso" class="hover:text-sky-400 transition">Metodología</a>
+        <a href="#faq" class="hover:text-sky-400 transition">Preguntas</a>
+      </nav>
+
+      <a id="nav-wsp-btn" href="https://wa.me/51946914724?text=Hola,%20vi%20tu%20portafolio%20y%20deseo%20cotizar%20un%20proyecto" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 transition flex items-center gap-2 shadow-md shadow-sky-500/20">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+        <span>+51 946 914 724</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-16 md:pt-28 md:pb-24 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-950/80 border border-sky-700/50 text-sky-300 text-xs font-semibold mb-6">
+      <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+      Ingeniería, Computación Científica & Editorial Académica
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+      Soluciones técnicas y académicas que <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">marcan la diferencia</span>.
+    </h1>
+
+    <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+      Simulaciones estructurales y físicas en <strong>Python</strong> con código documentado, maquetación editorial en <strong>LaTeX</strong> de estándar universitario y diapositivas ejecutivas para <strong>sustentación de tesis</strong>.
+    </p>
+
+    <!-- CTAs -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://wa.me/51946914724?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20un%20trabajo%20urgente" target="_blank" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold flex items-center justify-center gap-2 shadow-lg shadow-sky-500/25 transition">
+        <span>Cotizar por WhatsApp</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="#proyectos" class="w-full sm:w-auto px-7 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-slate-300 font-medium transition flex items-center justify-center">
+        Ver Muestras  
+      </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left max-w-3xl mx-auto pt-8 border-t border-slate-800/80">
+      <div class="p-3">
+        <div class="text-sky-400 font-mono font-bold text-xl">100%</div>
+        <div class="text-xs text-slate-400 mt-0.5">Código abierto documentado</div>
+      </div>
+      <div class="p-3">
+        <div class="text-sky-400 font-mono font-bold text-xl">Vectorial</div>
+        <div class="text-xs text-slate-400 mt-0.5">Gráficos en alta resolución</div>
+      </div>
+      <div class="p-3">
+        <div class="text-sky-400 font-mono font-bold text-xl">APA 7 / IEEE</div>
+        <div class="text-xs text-slate-400 mt-0.5">Rigor editorial estricto</div>
+      </div>
+      <div class="p-3">
+        <div class="text-sky-400 font-mono font-bold text-xl">Puntual</div>
+        <div class="text-xs text-slate-400 mt-0.5">Entrega sin retrasos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Catálogo Especializado</h2>
+      <p class="text-3xl font-bold text-white mt-2">Servicios Técnicos Diseñados para Exigencias Reales</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Servicio 1: Python -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <span class="text-xs font-mono text-sky-400 bg-sky-950/60 px-2.5 py-1 rounded border border-sky-800">Cálculo & Simulación</span>
+          <h3 class="text-xl font-bold text-white mt-3">Simulación Computacional en Python</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Gráficos 2D/3D con NumPy, SciPy y Matplotlib. Diagramas de fuerza cortante, momento flector, elástica y planos de deformación Navier-Bernoulli.
+          </p>
+
+          <ul class="mt-4 space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Código fuente documentado línea a línea
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Exportación vectorial (.PDF / .PNG HD)
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Mapas de tensiones y colorbars profesionales
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-500 block">Tarifa estimada</span>
+            <span class="text-lg font-bold text-white">S/ 40 – S/ 180</span>
+          </div>
+          <a href="https://wa.me/51946914724?text=Hola,%20quisiera%20cotizar%20un%20script%20de%20simulaci%C3%B3n%20en%20Python" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-slate-950 font-semibold text-xs transition">
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicio 2: LaTeX Editorial -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <span class="text-xs font-mono text-sky-400 bg-sky-950/60 px-2.5 py-1 rounded border border-sky-800">Editorial Universitaria</span>
+          <h3 class="text-xl font-bold text-white mt-3">Maquetación Académica en LaTeX</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Compendios, guías de práctica y artículos con tipografía formal, `tcolorbox`, fórmulas complejas, tablas sin líneas verticales y normas APA 7 / IEEE.
+          </p>
+
+          <ul class="mt-4 space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Calidad estética de libro o paper IEEE
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Citas y bibliografía automática en BibTeX
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Entrega de .tex fuente compilable + PDF
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-500 block">Tarifa estimada</span>
+            <span class="text-lg font-bold text-white">S/ 35 – S/ 160</span>
+          </div>
+          <a href="https://wa.me/51946914724?text=Hola,%20quisiera%20maquetar%20un%20documento%20en%20LaTeX" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-slate-950 font-semibold text-xs transition">
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicio 3: Diapositivas Tesis -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+          </div>
+          <span class="text-xs font-mono text-sky-400 bg-sky-950/60 px-2.5 py-1 rounded border border-sky-800">Defensa & Grado</span>
+          <h3 class="text-xl font-bold text-white mt-3">Diapositivas de Sustentación</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Estructuración visual para defensas de tesis e informes de titulación. Cero párrafos apelmazados: síntesis visual, diagramas de flujo y Beamer / PPT sobrio.
+          </p>
+
+          <ul class="mt-4 space-y-2 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Jerarquía visual aprobada por jurados
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Diagramas de metodología y resultados
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Enfoque en oratoria y tiempo límite
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-500 block">Tarifa estimada</span>
+            <span class="text-lg font-bold text-white">S/35</span>
+          </div>
+          <a href="https://wa.me/51946914724?text=Hola,%20necesito%20diapositivas%20para%20sustentaci%C3%B3n" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-slate-950 font-semibold text-xs transition">
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Showcase / Proyectos Section (Modificado con soporte de Imágenes en Proporción 3:4) -->
+  <section id="proyectos" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-slate-800/80">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Portafolio & Demostraciones</h2>
+      <p class="text-3xl font-bold text-white mt-2">Muestras Reales de Ejecución Técnica</p>
+      <p class="text-sm text-slate-400 mt-2">Haz clic en cualquiera de las imágenes en formato 3:4 para verla ampliada en alta resolución.</p>
+    </div>
+
+    <div class="space-y-16">
+      
+      <!-- ==================================================================== -->
+      <!-- CASO 01: SIMULACIÓN EN PYTHON CON IMAGEN 3:4                         -->
+      <!-- ==================================================================== -->
+      <div class="glass-card rounded-2xl p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Columna de Texto Técnico -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 text-xs font-mono font-medium">
+            <span>CASO 01</span> • <span>PYTHON / NUMPY / MATPLOTLIB</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Simulación de Deformación y Tensiones en Viga 3D</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Desarrollo de script computacional para el cálculo de esfuerzos axiales y flexión en vigas empotradas bajo cargas distribuidas. Generación automática del plano de tensiones \(\sigma(x, y)\) con colormap de alta precisión y exportación vectorial sin pixelado.
+          </p>
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto">
+            <span class="text-sky-400"># Fragmento del modelo elástico Navier-Bernoulli</span><br>
+            def navier_bernoulli_stress(M, I, y):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return - (M * y) / I<br>
+            <span class="text-emerald-400"># Exportado en SVG/PDF vectorial sin pixelado</span>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Diagrama Cortante V(x)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Momento Flector M(x)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Malla 3D</span>
+          </div>
+        </div>
+
+        <!-- Columna de Imagen (Formato 3:4) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <!-- ================================================================== -->
+          <!-- [EDITA AQUÍ LA IMAGEN DEL CASO 01]                                 -->
+          <!-- Puedes guardar tu imagen en 'img/mi_viga.jpg' y poner:             -->
+          <!-- src="img/mi_viga.jpg"                                              -->
+          <!-- ================================================================== -->
+          <div class="image-container-3-4 group">
+            <span class="badge-ratio-3-4">HD</span>
+            <img 
+              id="caso-1-img"
+              src="img/caso1_simulacion_3x4.png" 
+              alt="Simulación de Viga 3D y Esfuerzos Navier-Bernoulli" 
+              class="image-3-4 expandible-3-4"
+              loading="lazy"
+            >
+            <!-- Overlay con botón de zoom -->
+            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="px-3 py-1.5 rounded-lg bg-sky-500 text-slate-950 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                Ver en grande
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================== -->
+      <!-- CASO 02: MAQUETACIÓN EN LATEX CON IMAGEN 3:4                         -->
+      <!-- ==================================================================== -->
+      <div class="glass-card rounded-2xl p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Columna de Imagen (Formato 3:4 - a la izquierda en pantallas grandes) -->
+        <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+          <!-- ================================================================== -->
+          <!-- [EDITA AQUÍ LA IMAGEN DEL CASO 02]                                 -->
+          <!-- Puedes guardar tu imagen en 'img/mi_latex.jpg' y poner:            -->
+          <!-- src="img/mi_latex.jpg"                                             -->
+          <!-- ================================================================== -->
+          <div class="image-container-3-4 group">
+            <span class="badge-ratio-3-4">HD</span>
+            <img 
+              id="caso-2-img"
+              src="img/caso2_latex_3x4.png" 
+              alt="Compendio Editorial en LaTeX y Tablas APA 7" 
+              class="image-3-4 expandible-3-4"
+              loading="lazy"
+            >
+            <!-- Overlay con botón de zoom -->
+            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="px-3 py-1.5 rounded-lg bg-sky-500 text-slate-950 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                Ver en grande
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de Texto Técnico -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-4">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 text-xs font-mono font-medium">
+            <span>CASO 02</span> • <span>LATEX / TCOLORBOX / BIBTEX</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Guía y Compendio Teórico de EDO en LaTeX</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Diagramación desde notas manuscritas o borradores en Word hacia un compendio de publicación formal. Inclusión de cajas de teoremas customizadas (`tcolorbox`), numeración automática de capítulos, tablas en formato estricto APA 7 y enlaces hipertextuales cruzados.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Formato Libro Universitario</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Cero Ruido Visual</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-300">Código .tex Incluido</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section id="proceso" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Garantía de Satisfacción</h2>
+      <p class="text-3xl font-bold text-white mt-2">Cómo Trabajamos Tu Entrega</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="glass-card p-5 rounded-xl">
+        <div class="text-2xl font-mono font-bold text-sky-400 mb-2">01</div>
+        <h4 class="font-bold text-white text-base">Recepción del Requerimiento</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Nos envías la consigna, datos del problema o apuntes por WhatsApp. Evaluamos alcance y tiempo.</p>
+      </div>
+
+      <div class="glass-card p-5 rounded-xl">
+        <div class="text-2xl font-mono font-bold text-sky-400 mb-2">02</div>
+        <h4 class="font-bold text-white text-base">Cotización Fija</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Sin sorpresas ni cobros ocultos. Se pacta precio cerrado, fecha exacta de entrega y 50% de anticipo.</p>
+      </div>
+
+      <div class="glass-card p-5 rounded-xl">
+        <div class="text-2xl font-mono font-bold text-sky-400 mb-2">03</div>
+        <h4 class="font-bold text-white text-base">Desarrollo y Revisión</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Generación de scripts, compilación de PDFs y envío de vistas previas con capturas de validación.</p>
+      </div>
+
+      <div class="glass-card p-5 rounded-xl">
+        <div class="text-2xl font-mono font-bold text-sky-400 mb-2">04</div>
+        <h4 class="font-bold text-white text-base">Entrega y Soporte</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Entrega final del código fuente y archivos listos para imprimir o sustentar, con soporte para consultas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 px-4 sm:px-6 max-w-4xl mx-auto border-t border-slate-800/80">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <h2 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Dudas Comunes</h2>
+      <p class="text-2xl font-bold text-white mt-1">Preguntas Frecuentes</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-5 rounded-xl">
+        <h4 class="font-semibold text-white text-sm">¿Incluyes el código fuente de las simulaciones en Python?</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Sí. Siempre recibirás el script `.py` o notebook `.ipynb` con comentarios detallados para que puedas explicar la lógica matemática al docente o jurado.
+        </p>
+      </div>
+
+      <div class="glass-card p-5 rounded-xl">
+        <h4 class="font-semibold text-white text-sm">¿Hacen entregas urgentes de 24 a 48 horas?</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Sí, atendemos solicitudes de emergencia previo acuerdo y disponibilidad de agenda, manteniendo el mismo estándar de calidad técnica.
+        </p>
+      </div>
+
+      <div class="glass-card p-5 rounded-xl">
+        <h4 class="font-semibold text-white text-sm">¿Qué métodos de pago aceptan?</h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Aceptamos Yape, Plin y pronto PayPal para pagos internacionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Bottom -->
+  <section class="py-16 px-4 sm:px-6 max-w-4xl mx-auto text-center">
+    <div class="glass-card p-8 md:p-12 rounded-3xl border border-sky-500/30 bg-gradient-to-b from-sky-950/40 to-slate-900/80 shadow-2xl">
+      <h3 class="text-3xl font-extrabold text-white">¿Tienes una entrega o sustentación próxima?</h3>
+      <p class="mt-3 text-slate-300 text-sm max-w-lg mx-auto">
+        No arriesgues tu calificación con documentos mal formateados o código que falla en plena exposición. Cotiza hoy mismo tu entrega con Daro Tec.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/51946914724?text=Hola,%20deseo%20cotizar%20un%20servicio%20t%C3%A9cnico%20para%20mi%20entrega" target="_blank" class="px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-sky-500/30 transition flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+          Escribir al WhatsApp (+51 946 914 724)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-500 font-mono">
+    <p>© 2026 Daro Tec. Soluciones de Computación Científica y Editorial Académica.</p>
+    <p class="mt-1 text-slate-400">WhatsApp Directo: <a href="https://wa.me/51946914724" target="_blank" class="text-sky-400 hover:underline font-semibold">+51 946 914 724</a> • Lima, Perú</p>
+  </footer>
+
+  <!-- Lightbox Modal (Para ver imágenes 3:4 en pantalla completa) -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <button id="lightbox-close" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 text-2xl font-bold transition">
+      ✕
+    </button>
+    <img id="lightbox-image" src="" alt="Ampliación del Proyecto" class="lightbox-img">
+  </div>
+
+  <!-- JavaScript Modular -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
